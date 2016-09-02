@@ -7,4 +7,4 @@ https://tryshoppe.com/docs/tutorials/setting-up
 
 if you are getting an error at the time to sudo rails sever or rails s, try doing "sudo rails s" or "sudo rails server"
 
-Online store more MAZA autoparts
+Online store for MAZA autoparts
