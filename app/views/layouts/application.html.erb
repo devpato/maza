@@ -8,6 +8,7 @@
 </head>
 <body>
 <%= link_to "View basket", basket_path %>
+<%= link_to "Checkout", checkout_path %>
 <%= flash[:notice] %>
 <%= yield %>
 	<% if current_order %>
