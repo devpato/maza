@@ -3435,3 +3435,545 @@ Processing by ProductsController#show as HTML
   [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
   Rendered products/show.html.erb within layouts/application (126.4ms)
 Completed 200 OK in 140ms (Views: 133.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 21:50:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (66.3ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shoppe_orders" ("ip_address", "status", "token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ip_address", "127.0.0.1"], ["status", "building"], ["token", "7d47f3d1-27aa-45ed-8a43-7b5d65c4077c"], ["created_at", "2016-09-02 01:50:23.147433"], ["updated_at", "2016-09-02 01:50:23.147433"]]
+  [1m[36mNifty::KeyValueStore::KeyValuePair Load (0.1ms)[0m  [1mSELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?[0m  [["parent_id", 1], ["parent_type", "Shoppe::Order"], ["group", "properties"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?  [["parent_id", 1], ["parent_type", "Shoppe::Order"], ["group", :properties]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 438ms (Views: 343.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 21:50:23 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.5ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (10.9ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "shoppe_orders" ("ip_address", "status", "token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ip_address", "127.0.0.1"], ["status", "building"], ["token", "e5337014-4660-4171-b759-94ed5ea416ac"], ["created_at", "2016-09-02 01:50:23.189956"], ["updated_at", "2016-09-02 01:50:23.189956"]]
+  [1m[36mNifty::KeyValueStore::KeyValuePair Load (0.0ms)[0m  [1mSELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?[0m  [["parent_id", 2], ["parent_type", "Shoppe::Order"], ["group", "properties"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?  [["parent_id", 2], ["parent_type", "Shoppe::Order"], ["group", :properties]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 37ms (Views: 22.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-01 21:50:23 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-01 21:50:23 -0400
+
+
+Started GET "/product/snom-870" for 127.0.0.1 at 2016-09-01 21:50:24 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"permalink"=>"snom-870"}
+  [1m[35mShoppe::Product Load (0.2ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'snom-870' AND "shoppe_product_translations"."locale" = ? LIMIT 1  [["locale", "en"]]
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (5)[0m
+  [1m[35mShoppe::Attachment Load (0.2ms)[0m  SELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1  [["parent_id", 5], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1[0m  [["parent_id", 5], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[35mShoppe::Product Load (0.2ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?  [["parent_id", 5]]
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered products/show.html.erb within layouts/application (113.4ms)
+  [1m[36mShoppe::Order Load (0.2ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)
+Completed 200 OK in 128ms (Views: 122.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/product/snom-870" for 127.0.0.1 at 2016-09-01 21:50:26 -0400
+
+AbstractController::ActionNotFound (The action 'buy' could not be found for ProductsController):
+  actionpack (4.2.7) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  shoppe (1.1.2) lib/shoppe/settings_loader.rb:10:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (7.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (16.9ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2016-09-01 21:52:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/product"):
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 21:52:06 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (22.9ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)
+Completed 200 OK in 269ms (Views: 198.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 21:52:06 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.0ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (11.2ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)[0m
+Completed 200 OK in 26ms (Views: 20.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/product/snom-870" for 127.0.0.1 at 2016-09-01 21:52:07 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"permalink"=>"snom-870"}
+  [1m[35mShoppe::Product Load (0.2ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'snom-870' AND "shoppe_product_translations"."locale" = ? LIMIT 1  [["locale", "en"]]
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (5)[0m
+  [1m[35mShoppe::Attachment Load (0.1ms)[0m  SELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1  [["parent_id", 5], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1[0m  [["parent_id", 5], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[35mShoppe::Product Load (0.2ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?  [["parent_id", 5]]
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered products/show.html.erb within layouts/application (125.9ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)
+Completed 200 OK in 139ms (Views: 134.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/product/snom-870" for 127.0.0.1 at 2016-09-01 21:52:08 -0400
+Processing by ProductsController#buy as HTML
+  Parameters: {"authenticity_token"=>"b7+EkcGSOdF74Ht9Ta/GMmhZ952vFWsURc9lvSNKOVMCfeHaoDxw9UYteQYOyr8XiZkeQyYYby4I34oSgC2MXw==", "permalink"=>"snom-870"}
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'snom-870' AND "shoppe_product_translations"."locale" = ? LIMIT 1[0m  [["locale", "en"]]
+  [1m[35mShoppe::Product::Translation Load (0.1ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (5)
+  [1m[36mShoppe::Order Load (0.0ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)
+  [1m[36mShoppe::Product Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ? LIMIT 1[0m  [["parent_id", 5]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+Shoppe::Errors::UnorderableItem ():
+  app/controllers/products_controller.rb:9:in `buy'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (7.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (15.8ms)
+
+
+Started GET "/basket" for 127.0.0.1 at 2016-09-01 21:52:23 -0400
+Processing by OrdersController#show as HTML
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)[0m
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered orders/_items.html.erb (1.9ms)
+  Rendered orders/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/basket" for 127.0.0.1 at 2016-09-01 21:52:25 -0400
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3Oyy47xkyCDti+DGhMco8x268n25YJf6Y8BdC2+BwXWxLteo3cqBBNBG4r3HolHW/HobozBtk8Au0LKkzOZ0eQ=="}
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (2)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mNifty::KeyValueStore::KeyValuePair Load (0.1ms)[0m  SELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ?  [["parent_id", 2], ["parent_type", "Shoppe::Order"]]
+  [1m[36mShoppe::Payment Load (0.1ms)[0m  [1mSELECT "shoppe_payments".* FROM "shoppe_payments" WHERE "shoppe_payments"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ?  [["id", 2]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 21:52:25 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.5ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "shoppe_orders" ("ip_address", "status", "token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ip_address", "127.0.0.1"], ["status", "building"], ["token", "f4b0b216-a5f9-47eb-8779-e49d90d91df0"], ["created_at", "2016-09-02 01:52:25.799810"], ["updated_at", "2016-09-02 01:52:25.799810"]]
+  [1m[36mNifty::KeyValueStore::KeyValuePair Load (0.1ms)[0m  [1mSELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?[0m  [["parent_id", 3], ["parent_type", "Shoppe::Order"], ["group", "properties"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "nifty_key_value_store".* FROM "nifty_key_value_store" WHERE "nifty_key_value_store"."parent_id" = ? AND "nifty_key_value_store"."parent_type" = ? AND "nifty_key_value_store"."group" = ?  [["parent_id", 3], ["parent_type", "Shoppe::Order"], ["group", :properties]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 35ms (Views: 21.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/product/yealink-t20p" for 127.0.0.1 at 2016-09-01 21:52:28 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"permalink"=>"yealink-t20p"}
+  [1m[35mShoppe::Product Load (0.2ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'yealink-t20p' AND "shoppe_product_translations"."locale" = ? LIMIT 1  [["locale", "en"]]
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (1)[0m
+  [1m[35mShoppe::Attachment Load (0.1ms)[0m  SELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1  [["parent_id", 1], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1[0m  [["parent_id", 1], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?  [["parent_id", 1]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  Rendered products/show.html.erb within layouts/application (4.4ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (3)[0m
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/product/yealink-t20p" for 127.0.0.1 at 2016-09-01 21:52:29 -0400
+Processing by ProductsController#buy as HTML
+  Parameters: {"authenticity_token"=>"LD3Y9eyPvXOhZfW5/kv6iQ7kqHbV7/MMuI+mTYPRqylB/72+jSH0V5yo98K9LoOs7yRBqFzi9zb1n0niILYeJQ==", "permalink"=>"yealink-t20p"}
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'yealink-t20p' AND "shoppe_product_translations"."locale" = ? LIMIT 1  [["locale", "en"]]
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (1)[0m
+  [1m[35mShoppe::Order Load (0.0ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (3)[0m
+  [1m[35mShoppe::Product Exists (0.0ms)[0m  SELECT  1 AS one FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ? LIMIT 1  [["parent_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT  "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" = ? AND "shoppe_order_items"."ordered_item_id" = ? AND "shoppe_order_items"."ordered_item_type" = ?  ORDER BY "shoppe_order_items"."id" ASC LIMIT 1  [["order_id", 3], ["ordered_item_id", 1], ["ordered_item_type", "Shoppe::Product"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 1], ["item_type", "Shoppe::Product"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shoppe_order_items" ("order_id", "ordered_item_id", "ordered_item_type", "quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["ordered_item_id", 1], ["ordered_item_type", "Shoppe::Product"], ["quantity", 0], ["created_at", "2016-09-02 01:52:29.670133"], ["updated_at", "2016-09-02 01:52:29.670133"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "shoppe_orders" SET "updated_at" = '2016-09-02 01:52:29.671529' WHERE "shoppe_orders"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 1], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."parent_id" = ? AND "shoppe_stock_level_adjustments"."parent_type" = ?  [["parent_id", 1], ["parent_type", "Shoppe::OrderItem"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 1], ["item_type", "Shoppe::Product"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."parent_id" = ? AND "shoppe_stock_level_adjustments"."parent_type" = ?  [["parent_id", 1], ["parent_type", "Shoppe::OrderItem"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "shoppe_order_items" SET "quantity" = ?, "updated_at" = ? WHERE "shoppe_order_items"."id" = ?[0m  [["quantity", 1], ["updated_at", "2016-09-02 01:52:29.675682"], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "shoppe_orders" SET "updated_at" = '2016-09-02 01:52:29.677227' WHERE "shoppe_orders"."id" = ?  [["id", 3]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" = ?[0m  [["order_id", 3]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppe::DeliveryServicePrice Load (0.1ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mShoppe::DeliveryService Load (0.1ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppe::DeliveryService Load (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (4.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/product/yealink-t20p
+Completed 302 Found in 51ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/product/yealink-t20p" for 127.0.0.1 at 2016-09-01 21:52:29 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"permalink"=>"yealink-t20p"}
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" INNER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL AND "shoppe_product_translations"."permalink" = 'yealink-t20p' AND "shoppe_product_translations"."locale" = ? LIMIT 1[0m  [["locale", "en"]]
+  [1m[35mShoppe::Product::Translation Load (0.1ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" IN (1)
+  [1m[36mShoppe::Attachment Load (0.0ms)[0m  [1mSELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1[0m  [["parent_id", 1], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_attachments".* FROM "shoppe_attachments" WHERE "shoppe_attachments"."parent_id" = ? AND "shoppe_attachments"."parent_type" = ? AND "shoppe_attachments"."role" = ?  ORDER BY "shoppe_attachments"."id" ASC LIMIT 1  [["parent_id", 1], ["parent_type", "Shoppe::Product"], ["role", "default_image"]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (3)
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" IN (1)[0m
+  [1m[35mShoppe::DeliveryServicePrice Load (0.1ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShoppe::DeliveryService Load (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mShoppe::DeliveryService Load (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mShoppe::DeliveryServicePrice Load (0.1ms)[0m  SELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1  [["delivery_service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?[0m  [["parent_id", 1]]
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/basket" for 127.0.0.1 at 2016-09-01 21:52:31 -0400
+Processing by OrdersController#show as HTML
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (3)[0m
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" IN (1)
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?[0m  [["shoppe_product_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."parent_id" = ?  [["parent_id", 1]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::TaxRate Load (0.1ms)[0m  SELECT  "shoppe_tax_rates".* FROM "shoppe_tax_rates" WHERE "shoppe_tax_rates"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppe::DeliveryServicePrice Load (0.1ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mShoppe::DeliveryService Load (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppe::DeliveryService Load (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mShoppe::DeliveryService Load (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mShoppe::DeliveryServicePrice Load (0.1ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1  [["delivery_service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_tax_rates".* FROM "shoppe_tax_rates" WHERE "shoppe_tax_rates"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1  [["delivery_service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_tax_rates".* FROM "shoppe_tax_rates" WHERE "shoppe_tax_rates"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1  [["delivery_service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_tax_rates".* FROM "shoppe_tax_rates" WHERE "shoppe_tax_rates"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1  [["delivery_service_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_tax_rates".* FROM "shoppe_tax_rates" WHERE "shoppe_tax_rates"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered orders/_items.html.erb (58.7ms)
+  Rendered orders/show.html.erb within layouts/application (61.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" INNER JOIN "shoppe_delivery_services" ON "shoppe_delivery_services"."id" = "shoppe_delivery_service_prices"."delivery_service_id" WHERE "shoppe_delivery_services"."active" = 't' AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."price" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "shoppe_delivery_services".* FROM "shoppe_delivery_services" WHERE "shoppe_delivery_services"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_delivery_service_prices".* FROM "shoppe_delivery_service_prices" WHERE "shoppe_delivery_service_prices"."delivery_service_id" = ? AND (min_weight <= 1.119 AND max_weight >= 1.119)  ORDER BY "shoppe_delivery_service_prices"."id" ASC LIMIT 1[0m  [["delivery_service_id", 1]]
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 2.0ms)
