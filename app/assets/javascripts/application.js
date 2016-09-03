@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require SmoothScroll.min
+//= require cbpAnimatedHeader
+//= require jquery.appear
+//= require mooz.themes.scripts
+//= require owl.carousel.min
 //= require_tree .

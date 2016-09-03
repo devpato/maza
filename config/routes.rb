@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
-  root to: "products#index"
+  #root to: "products#index"
 
   post "product/:permalink", to: "products#buy"
   get "basket", to: "orders#show"
@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
   match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
 
+  get 'welcome/index'
+  root 'welcome#index' , as: 'welcome'
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
