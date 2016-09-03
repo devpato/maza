@@ -8196,3 +8196,1496 @@ Started GET "/assets/shoppe/application.self-ce34d6bfd3fd53b6f17486309b958fcd39d
 
 
 Started GET "/assets/shoppe/order_form.self-ed90c57659860adf99c5b02358e19c4d80d0d33a585ab67800725767e8adecde.js?body=1" for 127.0.0.1 at 2016-09-01 22:14:03 -0400
+
+
+Started GET "/shoppe/customers" for 127.0.0.1 at 2016-09-01 22:16:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Shoppe::CustomersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/index.html.haml within layouts/shoppe/application (33.2ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (can not load translations from /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/config/locales/pt-BR.yml: #<Errno::EACCES: Permission denied @ rb_sysopen - /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/config/locales/pt-BR.yml>):
+    1: - @page_title = t('shoppe.customers.customers')
+    2: 
+    3: = content_for :header do
+    4:   %p.buttons
+  i18n (0.7.0) lib/i18n/backend/base.rb:184:in `rescue in load_yml'
+  i18n (0.7.0) lib/i18n/backend/base.rb:181:in `load_yml'
+  i18n (0.7.0) lib/i18n/backend/base.rb:165:in `load_file'
+  i18n (0.7.0) lib/i18n/backend/base.rb:15:in `block in load_translations'
+  i18n (0.7.0) lib/i18n/backend/base.rb:15:in `each'
+  i18n (0.7.0) lib/i18n/backend/base.rb:15:in `load_translations'
+  i18n (0.7.0) lib/i18n/backend/simple.rb:57:in `init_translations'
+  i18n (0.7.0) lib/i18n/backend/simple.rb:40:in `available_locales'
+  i18n (0.7.0) lib/i18n/config.rb:43:in `available_locales'
+  i18n (0.7.0) lib/i18n/config.rb:49:in `available_locales_set'
+  i18n (0.7.0) lib/i18n.rb:278:in `locale_available?'
+  i18n (0.7.0) lib/i18n.rb:284:in `enforce_available_locales!'
+  i18n (0.7.0) lib/i18n.rb:151:in `translate'
+  actionview (4.2.7) lib/action_view/helpers/translation_helper.rb:69:in `translate'
+  shoppe (1.1.2) app/views/shoppe/customers/index.html.haml:1:in `__usr_local_lib_ruby_gems_______gems_shoppe_______app_views_shoppe_customers_index_html_haml___2775253262652068966_47363923635540'
+  actionview (4.2.7) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.7) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.7) lib/rails/railtie.rb:194:in `method_missing'
+  actionpack (4.2.7) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  shoppe (1.1.2) lib/shoppe/settings_loader.rb:10:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.7ms)
+
+
+Started GET "/shoppe/customers" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Shoppe::CustomersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/_search_form.html.haml (3.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_customers" LIMIT 25 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_customers"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/index.html.haml within layouts/shoppe/application (72.0ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 278ms (Views: 259.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/shoppe/chosen.self-1e9cf98b0845fa5045169a53eb40f6d9f38a23b24df7f8c2664952ed6fb9a782.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/reset.self-050585ddb6b789a6533fd32c8bbc2cfba108183318b41fa9c582377eea6f2c23.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/dialog.self-03c58f38ac7e94f5b93559394ca355b8497dcec124f6ca012c5e5d99e2b36a04.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/elements.self-d669e46d50315381c9e64957a9b8e23458ac5e8444c689476b7110b75483e93f.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/nifty/dialog.self-368f2b7ffd21d10bccf886f76068eb5cdf19e8b2ac3e56a8decb0a9d7439ce8b.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/application.self-4abcbd9e5cb39cddd178f2f5b774b809dec4a8e9bd344cf45b10f45aceb38b26.css?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/mousetrap.self-39c1f3cf44524ee1bd8f45fc36eb79dad1199cbe666e01e5ceee0811b64d1df5.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/jquery_ui.self-d0baf0ff12e96683ac684343f26b8be138c3fb4f126e8bf814d48535c1c162f5.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/chosen.jquery.self-a7163066d83c2a8d895490e9412558cf1bda87a2926d908533f64b94d4f293b0.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/nifty/dialog.self-7dcb1bea0f8a5f7b07ada359ef43f5debd4f390324fc52fcf774df9fbab04a60.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/order_form.self-ed90c57659860adf99c5b02358e19c4d80d0d33a585ab67800725767e8adecde.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/application.self-ce34d6bfd3fd53b6f17486309b958fcd39d7b7dc3923bf72e846d27c847972ce.js?body=1" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/assets/shoppe/icons/id-cb2a42ea443d6081564941fbfadd207f9516796da83572022a6ff3ea75216e74.svg" for 127.0.0.1 at 2016-09-01 22:16:15 -0400
+
+
+Started GET "/shoppe/customers" for 127.0.0.1 at 2016-09-01 22:16:19 -0400
+Processing by Shoppe::CustomersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/_search_form.html.haml (1.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_customers" LIMIT 25 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoppe_customers"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/index.html.haml within layouts/shoppe/application (3.8ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppe/users" for 127.0.0.1 at 2016-09-01 22:16:22 -0400
+Processing by Shoppe::UsersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT "shoppe_users".* FROM "shoppe_users"[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/users/index.html.haml within layouts/shoppe/application (3.1ms)
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppe/customers" for 127.0.0.1 at 2016-09-01 22:16:24 -0400
+Processing by Shoppe::CustomersController#index as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/_search_form.html.haml (1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_customers" LIMIT 25 OFFSET 0) subquery_for_count
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_customers"[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/index.html.haml within layouts/shoppe/application (4.3ms)
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppe/orders" for 127.0.0.1 at 2016-09-01 22:16:29 -0400
+Processing by Shoppe::OrdersController#index as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoppe_orders" WHERE (received_at is not null)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/_search_form.html.haml (4.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_orders" WHERE (received_at is not null) LIMIT 25 OFFSET 0) subquery_for_count[0m
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE (received_at is not null)  ORDER BY "shoppe_orders"."id" DESC LIMIT 25 OFFSET 0
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (5)[0m
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" IN (9)
+  [1m[36mShoppe::Product::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?[0m  [["shoppe_product_id", 9]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/index.html.haml within layouts/shoppe/application (74.9ms)
+Completed 200 OK in 128ms (Views: 116.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/shoppe/settings" for 127.0.0.1 at 2016-09-01 22:16:49 -0400
+Processing by Shoppe::SettingsController#edit as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/settings/edit.html.haml within layouts/shoppe/application (4.8ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shoppe/countries" for 127.0.0.1 at 2016-09-01 22:16:50 -0400
+Processing by Shoppe::CountriesController#index as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppe::Country Load (0.9ms)[0m  SELECT "shoppe_countries".* FROM "shoppe_countries"  ORDER BY "shoppe_countries"."name" ASC
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/countries/index.html.haml within layouts/shoppe/application (33.7ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 86ms (Views: 82.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/shoppe/icons/globe-11325b004300917434c11f23f0515c927ada6aa658e08027a81efa1a2e26b4ab.svg" for 127.0.0.1 at 2016-09-01 22:16:50 -0400
+
+
+Started GET "/shoppe/users" for 127.0.0.1 at 2016-09-01 22:16:52 -0400
+Processing by Shoppe::UsersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT "shoppe_users".* FROM "shoppe_users"[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/users/index.html.haml within layouts/shoppe/application (0.8ms)
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shoppe/tax_rates" for 127.0.0.1 at 2016-09-01 22:16:56 -0400
+Processing by Shoppe::TaxRatesController#index as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppe::TaxRate Load (0.1ms)[0m  SELECT "shoppe_tax_rates".* FROM "shoppe_tax_rates"  ORDER BY "shoppe_tax_rates"."id" ASC
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/tax_rates/index.html.haml within layouts/shoppe/application (4.7ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppe/delivery_services" for 127.0.0.1 at 2016-09-01 22:16:58 -0400
+Processing by Shoppe::DeliveryServicesController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_delivery_services"[0m
+  [1m[35mShoppe::DeliveryService Load (0.1ms)[0m  SELECT "shoppe_delivery_services".* FROM "shoppe_delivery_services"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/delivery_services/index.html.haml within layouts/shoppe/application (6.8ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shoppe/product_categories" for 127.0.0.1 at 2016-09-01 22:16:59 -0400
+Processing by Shoppe::ProductCategoriesController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(DISTINCT "shoppe_product_categories"."id") FROM "shoppe_product_categories" LEFT OUTER JOIN "shoppe_product_category_translations" ON "shoppe_product_category_translations"."shoppe_product_category_id" = "shoppe_product_categories"."id" WHERE "shoppe_product_categories"."parent_id" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(DISTINCT "shoppe_product_categories"."id") FROM "shoppe_product_categories" LEFT OUTER JOIN "shoppe_product_category_translations" ON "shoppe_product_category_translations"."shoppe_product_category_id" = "shoppe_product_categories"."id" WHERE "shoppe_product_categories"."parent_id" IS NULL
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "shoppe_product_categories"."id" AS t0_r0, "shoppe_product_categories"."name" AS t0_r1, "shoppe_product_categories"."permalink" AS t0_r2, "shoppe_product_categories"."description" AS t0_r3, "shoppe_product_categories"."created_at" AS t0_r4, "shoppe_product_categories"."updated_at" AS t0_r5, "shoppe_product_categories"."parent_id" AS t0_r6, "shoppe_product_categories"."lft" AS t0_r7, "shoppe_product_categories"."rgt" AS t0_r8, "shoppe_product_categories"."depth" AS t0_r9, "shoppe_product_categories"."ancestral_permalink" AS t0_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t0_r11, "shoppe_product_category_translations"."id" AS t1_r0, "shoppe_product_category_translations"."shoppe_product_category_id" AS t1_r1, "shoppe_product_category_translations"."locale" AS t1_r2, "shoppe_product_category_translations"."created_at" AS t1_r3, "shoppe_product_category_translations"."updated_at" AS t1_r4, "shoppe_product_category_translations"."name" AS t1_r5, "shoppe_product_category_translations"."permalink" AS t1_r6, "shoppe_product_category_translations"."description" AS t1_r7 FROM "shoppe_product_categories" LEFT OUTER JOIN "shoppe_product_category_translations" ON "shoppe_product_category_translations"."shoppe_product_category_id" = "shoppe_product_categories"."id" WHERE "shoppe_product_categories"."parent_id" IS NULL  ORDER BY shoppe_product_category_translations.name[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "en"]]
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT  "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  ORDER BY "shoppe_product_category_translations"."id" ASC LIMIT 1[0m  [["shoppe_product_category_id", 2], ["locale", "en"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "cs"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "es"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "hu"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "nl"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "zh"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "fr"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "ro"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "de"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "es-US"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "pl"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 2], ["locale", "pt-BR"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 2], ["locale", "ru"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoppe_product_categories" WHERE "shoppe_product_categories"."parent_id" = ?  [["parent_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "en"]]
+  [1m[35mShoppe::ProductCategory::Translation Load (0.0ms)[0m  SELECT  "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  ORDER BY "shoppe_product_category_translations"."id" ASC LIMIT 1  [["shoppe_product_category_id", 1], ["locale", "en"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "cs"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "es"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "hu"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "nl"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "zh"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "fr"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "ro"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "de"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "es-US"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "pl"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?[0m  [["shoppe_product_category_id", 1], ["locale", "pt-BR"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ? AND "shoppe_product_category_translations"."locale" = ?  [["shoppe_product_category_id", 1], ["locale", "ru"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_product_categories" WHERE "shoppe_product_categories"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/product_categories/index.html.haml within layouts/shoppe/application (31.3ms)
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+Completed 200 OK in 96ms (Views: 70.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/shoppe/products" for 127.0.0.1 at 2016-09-01 22:17:01 -0400
+Processing by Shoppe::ProductsController#index as HTML
+  [1m[36mShoppe::User Load (0.1ms)[0m  [1mSELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_stock_level_adjustments"."id" AS t2_r0, "shoppe_stock_level_adjustments"."item_id" AS t2_r1, "shoppe_stock_level_adjustments"."item_type" AS t2_r2, "shoppe_stock_level_adjustments"."description" AS t2_r3, "shoppe_stock_level_adjustments"."adjustment" AS t2_r4, "shoppe_stock_level_adjustments"."parent_type" AS t2_r5, "shoppe_stock_level_adjustments"."parent_id" AS t2_r6, "shoppe_stock_level_adjustments"."created_at" AS t2_r7, "shoppe_stock_level_adjustments"."updated_at" AS t2_r8, "shoppe_product_categories"."id" AS t3_r0, "shoppe_product_categories"."name" AS t3_r1, "shoppe_product_categories"."permalink" AS t3_r2, "shoppe_product_categories"."description" AS t3_r3, "shoppe_product_categories"."created_at" AS t3_r4, "shoppe_product_categories"."updated_at" AS t3_r5, "shoppe_product_categories"."parent_id" AS t3_r6, "shoppe_product_categories"."lft" AS t3_r7, "shoppe_product_categories"."rgt" AS t3_r8, "shoppe_product_categories"."depth" AS t3_r9, "shoppe_product_categories"."ancestral_permalink" AS t3_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t3_r11, "variants_shoppe_products"."id" AS t4_r0, "variants_shoppe_products"."parent_id" AS t4_r1, "variants_shoppe_products"."name" AS t4_r2, "variants_shoppe_products"."sku" AS t4_r3, "variants_shoppe_products"."permalink" AS t4_r4, "variants_shoppe_products"."description" AS t4_r5, "variants_shoppe_products"."short_description" AS t4_r6, "variants_shoppe_products"."active" AS t4_r7, "variants_shoppe_products"."weight" AS t4_r8, "variants_shoppe_products"."price" AS t4_r9, "variants_shoppe_products"."cost_price" AS t4_r10, "variants_shoppe_products"."tax_rate_id" AS t4_r11, "variants_shoppe_products"."created_at" AS t4_r12, "variants_shoppe_products"."updated_at" AS t4_r13, "variants_shoppe_products"."featured" AS t4_r14, "variants_shoppe_products"."in_the_box" AS t4_r15, "variants_shoppe_products"."stock_control" AS t4_r16, "variants_shoppe_products"."default" AS t4_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_stock_level_adjustments" ON "shoppe_stock_level_adjustments"."item_id" = "shoppe_products"."id" AND "shoppe_stock_level_adjustments"."item_type" = ? LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name  [["item_type", "Shoppe::Product"]]
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::ProductCategory::Translation Load (0.0ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35m (0.1ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 9], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 9], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 10], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 10], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 8], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 8], ["item_type", "Shoppe::Product"]]
+  [1m[35mShoppe::Product::Translation Load (0.0ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?  [["shoppe_product_id", 6]]
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 6], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 6], ["item_type", "Shoppe::Product"]]
+  [1m[35mShoppe::Product::Translation Load (0.0ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?  [["shoppe_product_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 7], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 7], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 1], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 1], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 2], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 2], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 3], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 3], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 4], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 4], ["item_type", "Shoppe::Product"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?  [["item_id", 11], ["item_type", "Shoppe::Product"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("shoppe_stock_level_adjustments"."adjustment") FROM "shoppe_stock_level_adjustments" WHERE "shoppe_stock_level_adjustments"."item_id" = ? AND "shoppe_stock_level_adjustments"."item_type" = ?[0m  [["item_id", 11], ["item_type", "Shoppe::Product"]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/products/_table.html.haml (32.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/products/index.html.haml within layouts/shoppe/application (34.5ms)
+Completed 200 OK in 90ms (Views: 71.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/shoppe/orders" for 127.0.0.1 at 2016-09-01 22:17:03 -0400
+Processing by Shoppe::OrdersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_orders" WHERE (received_at is not null)[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/_search_form.html.haml (3.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_orders" WHERE (received_at is not null) LIMIT 25 OFFSET 0) subquery_for_count
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE (received_at is not null)  ORDER BY "shoppe_orders"."id" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (5)
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" IN (9)[0m
+  [1m[35mShoppe::Product::Translation Load (0.0ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?  [["shoppe_product_id", 9]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/index.html.haml within layouts/shoppe/application (10.9ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shoppe/customers" for 127.0.0.1 at 2016-09-01 22:17:05 -0400
+Processing by Shoppe::CustomersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/_search_form.html.haml (1.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_customers" LIMIT 25 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shoppe_customers"
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/customers/index.html.haml within layouts/shoppe/application (4.0ms)
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppe/orders" for 127.0.0.1 at 2016-09-01 22:17:10 -0400
+Processing by Shoppe::OrdersController#index as HTML
+  [1m[35mShoppe::User Load (0.1ms)[0m  SELECT  "shoppe_users".* FROM "shoppe_users" WHERE "shoppe_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shoppe_orders" WHERE (received_at is not null)[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/_search_form.html.haml (3.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "shoppe_orders" WHERE (received_at is not null) LIMIT 25 OFFSET 0) subquery_for_count
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE (received_at is not null)  ORDER BY "shoppe_orders"."id" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (5)
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" IN (9)[0m
+  [1m[35mShoppe::Product::Translation Load (0.0ms)[0m  SELECT "shoppe_product_translations".* FROM "shoppe_product_translations" WHERE "shoppe_product_translations"."shoppe_product_id" = ?  [["shoppe_product_id", 9]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views/shoppe/orders/index.html.haml within layouts/shoppe/application (11.1ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/basket" for 127.0.0.1 at 2016-09-01 22:30:24 -0400
+Processing by OrdersController#show as HTML
+  [1m[35mShoppe::Order Load (0.2ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  Rendered orders/_items.html.erb (3.8ms)
+  Rendered orders/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 22:30:38 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (10.4ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+Completed 200 OK in 29ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-01 22:30:38 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.5ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.9ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:07:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (69.5ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 364ms (Views: 267.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:12:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (64.8ms)
+  [1m[36mShoppe::Order Load (0.2ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 5539ms (Views: 5447.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:12:06 -0400
+
+
+Started GET "/checkout" for 127.0.0.1 at 2016-09-03 17:12:16 -0400
+Processing by OrdersController#checkout as HTML
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.2ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" = ?  [["order_id", 6]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  Rendered orders/_items.html.erb (4.9ms)
+  [1m[35mShoppe::Country Load (0.7ms)[0m  SELECT "shoppe_countries".* FROM "shoppe_countries"  ORDER BY "shoppe_countries"."name" ASC
+  Rendered orders/checkout.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:13:43 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (Missing partial products/_navbar, application/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/home/boola/Desktop/maza/app/views"
+  * "/usr/local/lib/ruby/gems/2.1.0/gems/shoppe-1.1.2/app/views"
+  * "/usr/local/lib/ruby/gems/2.1.0/gems/kaminari-0.16.3/app/views"
+):
+     7:   <%= csrf_meta_tags %>
+     8: </head>
+     9: <body>
+    10: <% render 'navbar' %>
+    11: <%= link_to "View basket", basket_path %>
+    12: <%= link_to "Checkout", checkout_path %>
+    13: <%= flash[:notice] %>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___4210466071618096549_69998199898060'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (8.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (17.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.0ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 38ms (Views: 30.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:14:54 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.0ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:02 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.8ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 39ms (Views: 29.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:03 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:38 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.0ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:15:49 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.0ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+Completed 200 OK in 39ms (Views: 33.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:01 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.8ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.0ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 37ms (Views: 28.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.0ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.1ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+Completed 200 OK in 38ms (Views: 30.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.7ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.0ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 44ms (Views: 35.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:02 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:03 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.4ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (64.7ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 355ms (Views: 264.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:14 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:15 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:16:15 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 1]]
+  [1m[36mShoppe::Product Load (0.1ms)[0m  [1mSELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShoppe::Setting Load (0.1ms)[0m  SELECT "shoppe_settings".* FROM "shoppe_settings"
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[35mShoppe::Order Load (0.1ms)[0m  SELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mShoppe::OrderItem Load (0.2ms)[0m  [1mSELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)[0m
+Completed 200 OK in 72ms (Views: 64.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:17:59 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  SELECT "shoppe_products"."id" AS t0_r0, "shoppe_products"."parent_id" AS t0_r1, "shoppe_products"."name" AS t0_r2, "shoppe_products"."sku" AS t0_r3, "shoppe_products"."permalink" AS t0_r4, "shoppe_products"."description" AS t0_r5, "shoppe_products"."short_description" AS t0_r6, "shoppe_products"."active" AS t0_r7, "shoppe_products"."weight" AS t0_r8, "shoppe_products"."price" AS t0_r9, "shoppe_products"."cost_price" AS t0_r10, "shoppe_products"."tax_rate_id" AS t0_r11, "shoppe_products"."created_at" AS t0_r12, "shoppe_products"."updated_at" AS t0_r13, "shoppe_products"."featured" AS t0_r14, "shoppe_products"."in_the_box" AS t0_r15, "shoppe_products"."stock_control" AS t0_r16, "shoppe_products"."default" AS t0_r17, "shoppe_product_translations"."id" AS t1_r0, "shoppe_product_translations"."shoppe_product_id" AS t1_r1, "shoppe_product_translations"."locale" AS t1_r2, "shoppe_product_translations"."created_at" AS t1_r3, "shoppe_product_translations"."updated_at" AS t1_r4, "shoppe_product_translations"."name" AS t1_r5, "shoppe_product_translations"."permalink" AS t1_r6, "shoppe_product_translations"."description" AS t1_r7, "shoppe_product_translations"."short_description" AS t1_r8, "shoppe_product_categories"."id" AS t2_r0, "shoppe_product_categories"."name" AS t2_r1, "shoppe_product_categories"."permalink" AS t2_r2, "shoppe_product_categories"."description" AS t2_r3, "shoppe_product_categories"."created_at" AS t2_r4, "shoppe_product_categories"."updated_at" AS t2_r5, "shoppe_product_categories"."parent_id" AS t2_r6, "shoppe_product_categories"."lft" AS t2_r7, "shoppe_product_categories"."rgt" AS t2_r8, "shoppe_product_categories"."depth" AS t2_r9, "shoppe_product_categories"."ancestral_permalink" AS t2_r10, "shoppe_product_categories"."permalink_includes_ancestors" AS t2_r11, "variants_shoppe_products"."id" AS t3_r0, "variants_shoppe_products"."parent_id" AS t3_r1, "variants_shoppe_products"."name" AS t3_r2, "variants_shoppe_products"."sku" AS t3_r3, "variants_shoppe_products"."permalink" AS t3_r4, "variants_shoppe_products"."description" AS t3_r5, "variants_shoppe_products"."short_description" AS t3_r6, "variants_shoppe_products"."active" AS t3_r7, "variants_shoppe_products"."weight" AS t3_r8, "variants_shoppe_products"."price" AS t3_r9, "variants_shoppe_products"."cost_price" AS t3_r10, "variants_shoppe_products"."tax_rate_id" AS t3_r11, "variants_shoppe_products"."created_at" AS t3_r12, "variants_shoppe_products"."updated_at" AS t3_r13, "variants_shoppe_products"."featured" AS t3_r14, "variants_shoppe_products"."in_the_box" AS t3_r15, "variants_shoppe_products"."stock_control" AS t3_r16, "variants_shoppe_products"."default" AS t3_r17 FROM "shoppe_products" LEFT OUTER JOIN "shoppe_product_translations" ON "shoppe_product_translations"."shoppe_product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categorizations" ON "shoppe_product_categorizations"."product_id" = "shoppe_products"."id" LEFT OUTER JOIN "shoppe_product_categories" ON "shoppe_product_categories"."id" = "shoppe_product_categorizations"."product_category_id" LEFT OUTER JOIN "shoppe_products" "variants_shoppe_products" ON "variants_shoppe_products"."parent_id" = "shoppe_products"."id" WHERE "shoppe_products"."parent_id" IS NULL  ORDER BY shoppe_product_translations.name
+  [1m[36mShoppe::ProductCategory::Translation Load (0.1ms)[0m  [1mSELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?[0m  [["shoppe_product_category_id", 1]]
+  [1m[35mShoppe::Product Load (0.1ms)[0m  SELECT  "shoppe_products".* FROM "shoppe_products" WHERE "shoppe_products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShoppe::Setting Load (0.1ms)[0m  [1mSELECT "shoppe_settings".* FROM "shoppe_settings"[0m
+  [1m[35mShoppe::ProductCategory::Translation Load (0.1ms)[0m  SELECT "shoppe_product_category_translations".* FROM "shoppe_product_category_translations" WHERE "shoppe_product_category_translations"."shoppe_product_category_id" = ?  [["shoppe_product_category_id", 2]]
+  Rendered products/index.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_navbar.html.erb (0.0ms)
+  [1m[36mShoppe::Order Load (0.1ms)[0m  [1mSELECT  "shoppe_orders".* FROM "shoppe_orders" WHERE "shoppe_orders"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mShoppe::OrderItem Load (0.1ms)[0m  SELECT "shoppe_order_items".* FROM "shoppe_order_items" WHERE "shoppe_order_items"."order_id" IN (6)
+Completed 200 OK in 47ms (Views: 37.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/application.self-df5cc1f523ae4703cc77f9ff9a7d86ac8ab5ca8f1613a76289301e67956937f0.css?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:10 -0400
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-09-03 17:18:11 -0400
