@@ -22,10 +22,7 @@
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
-Project:	Sanza - One page multi purpose page
-Version:	1.0
-Last change:	17/08/2015 [...]
-Designed by:	MOOZ Themes / www.MOOZthemes.com
+
 Primary use:	One page
 
 [Table of contents]
@@ -316,6 +313,7 @@ header {
 	-o-background-size: cover;
 	text-align: center;
 	color: #fff;
+	height: 400px important;
 }
 
 header .intro-text {
@@ -340,6 +338,7 @@ header .intro-text .intro-lead-in {
 	color: #3E3E3E;
 	font-weight: 300;
 	line-height: 40px;
+
 }
 .intro-lead-in{
 	background-color: none;
@@ -362,6 +361,7 @@ header .intro-text .intro-heading {
 	word-spacing: 10px;
 	color: #FFFFFF;
 	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+
 }
 
 @media (min-width: 768px) {
@@ -841,7 +841,7 @@ font-size: 11px;
 --------------------*/
 
 .btn-xl:hover, .btn-xl:focus, .btn-xl:active, .btn-xl.active, .open .dropdown-toggle.btn-xl {
-	color: #fff;
+	color: #fff !important;
 	background-color: #b72500 !important;
 	border-color: #b72500 !important;
 }
