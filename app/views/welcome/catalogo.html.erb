@@ -1,0 +1,162 @@
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<%=render 'layouts/navbar' %>
+<div class="catalogo">
+	<div class="container">
+		<center>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">MOTOR</h4>
+				<hr>
+				<ul>
+					<li>METALES DE BIELA/CENTRO</li>
+					<li>BOMBA DE ACEITE</li>
+					<li>KIT DE EMPAQUES O FULL SET</li>
+					<li>CARTER DE MOTOR</li>
+					<li>TAPA DE PUNTERIAS</li>
+					<li>RETENES</li>
+					<li>EMPAQUES CABEZA, ADMICION, ESCAPE</li>
+					<li>ANILLOS</li>
+					<li>KIT DE DISTRIBUCION</li>
+					<li>BANDAS</li>
+					<li>TENSORES</li>
+					<li>POLEAS</li>
+				<ul>
+			</div>
+			<div class="col-sm-4 cuadro">
+				<h4 class="secc">ENFRIAMIENTO</h4>
+				<hr>
+				<ul>
+					<li>MANGERAS</li>
+					<li>FAN CLUTCH</li>
+					<li>ASPAS DE FAN CLUTCH</li>
+					<li>BOMBAS DE AGUA</li>
+					<li>RADIADORES</li>
+					<li>TERMOSTATOS</li>
+					<li>BRIDAS</li>
+					<li>DEPOSITOS</li>
+				</ul>	
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">SUSPENSION</h4>
+				<hr>
+				<ul>
+					<li>BRAZOS</li>
+					<li>SOPORTES MOTOR/TRANSMISION</li>
+					<li>ROTULAS</li>
+					<li>HORQUILLAS</li>
+					<li>ESTABILIZADORES</li>
+					<li>BUJES</li>
+					<li>MAZAS</li>
+					<li>AMORTIGUADORES</li>
+					<li>BASES DE AMORTIGUADOR</li>
+					<li>GOMAS DE BARRA ESTABILIZADORA</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">DIRECCION</h4>
+				<hr>
+				<ul>
+					<li>CUBRE POLVOS DE DIRECCION</li>
+					<li>CUBRE POLOS DE FLECHAS HOMOCINETICAS</li>
+					<li>FLECHAS DE DIRECCION</li>
+					<li>BARRA ESTABILIZADORA</li>
+					<li>BOMBA DE DIRECCION</li>
+					<li>BIEL</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">AFINACIONES</h4>
+				<hr>
+				<ul>
+					<li>FILTROS ACEITE</li>
+					<li>FILTROS AIRE</li>
+					<li>FILTRO DE AIRE ACONDICIONADO / CABINA</li>
+					<li>FILTROS DE GASOLINA</li>
+					<li>BUJIAS</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">ELECTRIAS</h4>
+				<hr>
+				<ul>
+					<li>BOBINAS</li>
+					<li>CABLES DE BUJIAS</li>
+					<li>ALTERNADORES</li>
+					<li>MARCHAS</li>
+					<li>SENSORES DE ARBOL DE LEVAS</li>
+					<li>SENSORES DE CIGUENAL</li>
+					<li>SENOSRES ABS</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">FRENOS</h4>
+				<hr>
+				<ul>
+					<li>BALATAS</li>
+					<li>DISCOS DE FRENOS</li>
+					<li>SENSORES DE DESGASTE DE BALATA</li>
+					<li>CILINDRO MAESTRO</li>
+					<li>CILINDROS ESCLAVOS</li>					
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">TRANSMISION</h4>
+				<hr>
+				<ul>
+					<li>CLUTCH</li>
+					<li>CILINDROS MAESTROS DE CLUTCH O BOMBA</li>
+					<li>CILINDRO ESCLAVO DE CLUTCH</li>
+					<li>COLLARIN</li>					
+				</ul>
+			</div>
+			<div class="col-sm-4 cuadro" >
+				<h4 class="secc">FLUIDOS</h4>
+				<hr>
+				<ul>
+					<li>ACEITE DE MOTOR</li>
+					<li>ACEITE DE TRANSMISION</li>
+					<li>LIQUIDACION DE FRENOS</li>
+					<li>LIQUIDO DE DIRECCION</li>					
+				</ul>
+			</div>
+		</center>		
+	</div>
+</div>
+<div id="search">
+		    <button type="button" class="close" id="closeSearch">×</button>
+		    <form>
+		        <input type="search" value="" placeholder="Escriba la palabra(s) clave" />		        
+		        <button type="submit" class="page-scroll btn btn-xl catalogo">Buscar</button>
+		    </form>
+		</div>
+<script>
+			$(function () {
+			    $('a[href="#search"]').on('click', function(event) {
+			        event.preventDefault();
+			        $('#search').addClass('open');
+			        $('#search > form > input[type="search"]').focus();
+			    });
+			    
+			    $('#search, #search button.close').on('click keyup', function(event) {
+			        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+			            $(this).removeClass('open');
+			        }
+			    });
+			    
+			    
+			    //Do not include! This prevents the form from submitting for DEMO purposes only!
+			    $('form').submit(function(event) {
+			        event.preventDefault();
+			        return false;
+			    })
+			});
+		</script>
+
+
+
+<%=render 'layouts/footer' %>

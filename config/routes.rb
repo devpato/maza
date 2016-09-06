@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
 
   get 'welcome/index'
+  get 'welcome/catalogo'
   root 'welcome#index' , as: 'welcome'
   root :to => 'welcome#index'
 
