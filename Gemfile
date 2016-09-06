@@ -43,7 +43,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'shoppe', '~> 1.0'
+  #gem 'shoppe', '~> 1.0'
+  gem 'shoppe', '~> 1.0', :git=>"git://github.com/pevargasg/shoppe.git"
   gem 'bootstrap-sass', '~> 3.2.0'
   gem 'autoprefixer-rails'
   gem 'font-awesome-sass'
