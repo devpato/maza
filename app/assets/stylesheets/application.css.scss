@@ -39,7 +39,18 @@ Primary use:	One page
 Buttons, etc:	#726FB9 (blue)
 hover color:	#78071A (yellow)
 -------------------------------------------------------------------*/
+nav{
 
+	border-bottom: 1px solid!important;
+	border-color: #ededed !important;
+}
+.producto{
+	background-color: white;
+	
+}
+.fondoProducto{
+	background-color: black;
+}
 /*--------------------
 Import Google Fonts
 --------------------*/
@@ -52,8 +63,21 @@ Import Google Fonts
 /*--------------------
 1. General
 --------------------*/
+.barra{
+	background-color: #222;
+
+
+}
 .instalaciones{
 
+}
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  
 }
 .secc{
 	color: #b72500 !important;
@@ -889,7 +913,7 @@ font-size: 11px;
 }
 
 .btn-xl {
-color: #fff;
+	color: #fff;
     background-color: #b72500 !important;
     /* border-color: #726FB9; */
     font-family: "Open Sans",sans-serif;
@@ -899,6 +923,18 @@ color: #fff;
     letter-spacing: 2px;
     font-size: 16px;
     padding: 17px 45px;
+}
+.btn-xs {
+	color: #fff;
+    background-color: #b72500 !important;
+    /* border-color: #726FB9; */
+    font-family: "Open Sans",sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-radius: 0;
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 7px 20px;
 }
 
 /* Back to top button
