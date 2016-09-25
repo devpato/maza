@@ -6,19 +6,17 @@
             <th style="text-align: center">Producto</th>
             <th style="text-align: center">Descripción</th>
             <th style="text-align: center">Precio</th>
-            <td style="text-align: center">SKU</td>
         </tr>
       </center>   
     </thead>
     <% @products.each do |category, products| %>
     <tbody>
       <% products.each do |product| %>
-        <% if product.sku.include?'MM'%>
+        <% if product.sku.include?''%>
         <tr>
           <td><%= link_to product.name, product_path(product.permalink) %></td>
           <td><%= product.short_description %></td>
           <td><%= number_to_currency product.price %></td>
-          <td><%=product.sku %></td></td>
         </tr>
         <% end %>
       <% end %>
@@ -27,5 +25,4 @@
   </table>  
 </div>
 <script>
-
 </script>
