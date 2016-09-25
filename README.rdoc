@@ -8,3 +8,13 @@ https://tryshoppe.com/docs/tutorials/setting-up
 if you are getting an error at the time to sudo rails sever or rails s, try doing "sudo rails s" or "sudo rails server"
 
 Online store for MAZA autoparts
+
+
+//ADMIN LOG IN
+admin@example.com
+password
+//Go to admin page
+http://localhost:3000/shoppe/
+//Go to products page
+http://localhost:3000/products
+this products page is only displaying the products that have a SKU STRING containing 'MM"this is just for testing purposes
