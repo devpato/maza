@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   root :to => 'welcome#index'
 
   #shoppe gem admin panel
-  get 'shoppe' , as: 'shoppe'
+  get 'shoppe', to: 'shoppe#orders', as: "shoppes"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
