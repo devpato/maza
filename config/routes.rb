@@ -3,8 +3,14 @@ Rails.application.routes.draw do
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
-  get "products" , to: "products#index"
-
+  get "products/motor" , as: 'motor'
+  get "products/afinaciones" , as: 'afinaciones'
+  get "products/electrias" , as: 'electrias'
+  get "products/enfriamiento" , as: 'enfriamiento'
+  get "products/fluidos" , as: 'fluidos'
+  get "products/frenos" , as: 'frenos'
+  get "products/suspension" , as: 'suspension'
+  get "products/transmision" , as: 'transmision'
   post "product/:permalink", to: "products#buy"
   get "basket", to: "orders#show"
   delete "basket", to: "orders#destroy"

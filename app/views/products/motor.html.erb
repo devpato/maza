@@ -1,0 +1,31 @@
+<div class="fondoProducto">
+  <div style="margin-top: 5%;background-color:white" class="container">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <center>
+          <tr>        
+              <th style="text-align: center">Producto</th>
+              <th style="text-align: center">Descripción</th>
+              <th style="text-align: center">Precio</th>
+          </tr>
+        </center>   
+      </thead>
+      <% @products.each do |category, products| %>
+      <tbody>
+        <% products.each do |product| %>
+          <% if category.name.include? 'VoIP Accessories'%>
+          <tr>
+            <td><%= link_to product.name, product_path(product.permalink) %></td>
+            <td><%= product.short_description %></td>
+            <td><%= number_to_currency product.price %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <% end %>
+    </table>  
+  </div>
+</div> 
+<%=render 'layouts/footer' %> 
+<script>
+</script>
