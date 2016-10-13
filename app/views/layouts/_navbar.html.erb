@@ -23,15 +23,15 @@
 						<li class="dropdown">
 	                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Catalogo <b class="caret"></b></a>
 	                        <ul class="dropdown-menu">
-	                            <li><a href="#">Motor</a></li>
-	                            <li><a href="#">Enfriamiento</a></li>
-	                            <li><a href="#">Suspension</a></li>
+	                            <li><%= link_to "MOTOR", "products/motor"%></li>
+	                            <li><%= link_to "EMFRIAMIENTO", "enfriamiento"%></li>
+	                            <li><%= link_to "SUSPENSION", "suspension"%></li>
 	                            <li class="divider"></li>
-	                            <li><a href="#">Afinaciones</a></li>
-	                            <li><a href="#">Electrias</a></li>
-	                            <li><a href="#">Frenos</a></li>
-	                            <li><a href="#">Transmision</a></li>
-	                            <li><a href="#">Fluidos</a></li>
+	                            <li><%= link_to "AFINACIONES", "afinaciones"%></li>
+	                            <li><%= link_to "ELECTRIAS", "electrias"%></li>
+	                            <li><%= link_to "FRENOS", "frenos"%></li>
+	                            <li><%= link_to "TRANSMISION", "transmision"%></li>
+	                            <li><%= link_to "FLUIDOS", "fluidos"%></li>
 	                        </ul>
                     	</li>
 						<li>
@@ -47,7 +47,7 @@
 							<a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 						</li>
 						<li>					
-							<%= link_to "ADMIN", shoppe_path%>
+							<%= link_to "ADMIN", "/shoppe"%>
 						</li>
 					</ul>
 				</div>
