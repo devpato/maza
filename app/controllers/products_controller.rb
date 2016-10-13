@@ -12,27 +12,27 @@ class ProductsController < ApplicationController
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def electrias
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def enfriamiento
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def fluidos
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def frenos
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def suspension
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
-  def motor
+  def transmision
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
     @products = @products.group_by(&:product_category)
   end
