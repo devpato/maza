@@ -20,9 +20,6 @@
 						<li>
 							<a class="page-scroll" href="#about">Conocenos</a>
 						</li>
-						<li>
-							<a class="page-scroll" href="#services">Instalaciones</a>
-						</li>
 						<li class="dropdown">
 	                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Catalogo <b class="caret"></b></a>
 	                        <ul class="dropdown-menu">
@@ -47,10 +44,10 @@
 							<a class="page-scroll" href="#contact">Iniciar sesión</a>
 						</li>
 						<li>
-							<i class="fa fa-shopping-cart" aria-hidden="true"><%= link_to "ADMIN", shoppe_path%></i>
+							<a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 						</li>
-						<li>
-							<a class="page-scroll" href="#contact"><i class="fa fa-lock" aria-hidden="true"></i></a>
+						<li>					
+							<%= link_to "ADMIN", shoppe_path%>
 						</li>
 					</ul>
 				</div>
