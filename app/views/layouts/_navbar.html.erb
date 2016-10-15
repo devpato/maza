@@ -38,16 +38,16 @@
 							<a class="page-scroll" href="#search">Busqueda</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#contact">Contacto</a>
+							<%= link_to "Contacto", "#{root_url}#contactForm"%>
 						</li>
 						<li>
 							<a class="page-scroll" href="#contact">Iniciar sesión</a>
 						</li>
 						<li>
-							<a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+							<%= link_to "Carrito", basket_path%>
 						</li>
 						<li>					
-							<%= link_to "ADMIN", "/shoppe"%>
+							<%= link_to "ADMIN", "/shoppe/orders"%>
 						</li>
 					</ul>
 				</div>

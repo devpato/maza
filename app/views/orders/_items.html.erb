@@ -1,10 +1,10 @@
-<table width='100%' border='1'>
+<table width='100%' class="table table-bordered" style="margin-top: 5%;background-color:white">
   <thead>
     <tr>
-      <td>Quantity</td>
-      <td>Product</td>
+      <td>Cantidad</td>
+      <td>Producto</td>
       <td>Sub-Total</td>
-      <td>Tax</td>
+      <td>IVA</td>
       <td>Total</td>
     </tr>
   </thead>
@@ -36,7 +36,7 @@
       <td><%= number_to_currency order.total_before_tax %></td>
     </tr>
     <tr>
-      <td colspan='4'>Tax</td>
+      <td colspan='4'>IVA</td>
       <td><%= number_to_currency order.tax %></td>
     </tr>
     <tr>

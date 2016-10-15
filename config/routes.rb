@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "products/frenos" , as: 'frenos'
   get "products/suspension" , as: 'suspension'
   get "products/transmision" , as: 'transmision'
+  get "products/especial" , as: 'especial'
   post "product/:permalink", to: "products#buy"
   get "basket", to: "orders#show"
   delete "basket", to: "orders#destroy"

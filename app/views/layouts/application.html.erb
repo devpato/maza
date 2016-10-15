@@ -14,7 +14,7 @@
 	<% if current_order %>
 		<p style="padding:10px;margin-bottom:0px !important; text-align:center;">
 		  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-		  You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
+		  Tienes <%= pluralize current_order.total_items, 'articulos'%> en tu carrito con un costo de
 		  <%=number_to_currency current_order.total_before_tax %> pesos
 		</p>
 	<% end %>
