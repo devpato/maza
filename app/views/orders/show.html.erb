@@ -1,3 +1,4 @@
 <h2>Tu carrito</h2>
 <%= render 'items', :order => current_order %>
 <p><%= link_to 'Vaciar carrito', basket_path, :method => :delete %></p>
+<p><%link_to "Pagar", "checkout_payment" %></p>

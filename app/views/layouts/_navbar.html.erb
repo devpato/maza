@@ -44,10 +44,11 @@
 							<a class="page-scroll" href="#contact">Iniciar sesión</a>
 						</li>
 						<li>
-							<%= link_to "Carrito", basket_path%>
+							<%= link_to '<i class="fa fa-shopping-cart fa-1x"></i>'.html_safe,checkout_path%>
+							
 						</li>
 						<li>					
-							<%= link_to "ADMIN", "/shoppe/orders"%>
+							<%= link_to '<i class="fa fa-lock fa-1x"></i>'.html_safe, "/shoppe/orders"%>
 						</li>
 					</ul>
 				</div>
