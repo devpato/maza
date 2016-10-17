@@ -1,12 +1,16 @@
-<h2>Paga ahora</h2>
-<%= form_tag do %>
-  <dl>
-    <dt><%= label_tag 'card_number' %></dt>
-    <dd><%= text_field_tag 'card_number' %></dd>
-    <dt><%= label_tag 'expiry' %></dt>
-    <dd><%= text_field_tag 'expiry' %></dd>
-    <dt><%= label_tag 'security_code' %></dt>
-    <dd><%= text_field_tag 'security_code' %></dd>
-    <dd><%= submit_tag "Continuar" %></dd>
-  </dl>
-<% end %>
+<div class="row" style="margin-top: 5%;">
+	<div class="col-sm-offset-4 col-sm-3">
+		<h2>Paga ahora</h2>
+		<%= form_tag do %>
+		  <dl>
+		    <dt><%= label_tag 'card_number'%></dt>
+		    <dd><%= text_field_tag 'card_number',"",class:'form-control'%></dd>
+		    <dt><%= label_tag 'expiry' %></dt>
+		    <dd><%= text_field_tag 'expiry',"", class:'form-control' %></dd>
+		    <dt><%= label_tag 'security_code' %></dt>
+		    <dd><%= text_field_tag 'security_code',"",class:"form-control" %></dd>
+		    <dd><%= submit_tag "Continuar",class: "age-scroll btn btn-xl catalogo" %></dd>
+		  </dl>
+		<% end %>
+	</div>
+</div>

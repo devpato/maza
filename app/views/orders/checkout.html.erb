@@ -10,9 +10,8 @@
 
             <dt><%= f.label :billing_address1, 'Dirección' %></dt>
             <dd><%= f.text_field :billing_address1,class:"form-control" %></dd>
-            <dd><%= f.text_field :billing_address2,class:"form-control" %></dd>
-            <dd><%= f.text_field :billing_address3,class:"form-control" %></dd>
-            <dd><%= f.text_field :billing_address4,class:"form-control" %></dd>
+             
+
             <dt><%= f.label :billing_postcode, 'Codigo Postal' %></dt>
             <dd><%= f.text_field :billing_postcode,class:"form-control" %></dd>
             <dt><%= f.label :billing_address1, 'Pais' %></dt>
@@ -28,4 +27,5 @@
           </dl>
         <% end %>
     </div>
+    <p><%= link_to 'Vaciar carrito', basket_path, :method => :delete %></p>
 </div>    
